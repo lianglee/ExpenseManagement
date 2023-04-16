@@ -11,7 +11,7 @@
 $expense       = new ExpenseManagement;
 $year          = input('year', '', date('Y'));
 $user_guid     = 1;
-$current_month = date('M');
+$current_month = date('m');
 
 $jan = $expense->getMonthStatus($user_guid, '01', $year);
 $feb = $expense->getMonthStatus($user_guid, '02', $year);
@@ -106,7 +106,7 @@ if(!$dev && $current_month !== '12') {
                                                 </div>                                         
                                         </div>
                                 		<div class="col-md-6 col-xs-6 col-sm-6">
-                                        		<div class="expense-month<?php echo $febg;?>" data-year="<?php echo $year;?>" data-month='02'>
+                                        		<div class="expense-month<?php echo $febf;?>" data-year="<?php echo $year;?>" data-month='02'>
 													<div class="expense-month-title"><?php echo ossn_print('em:month:feb');?></div>
                                                     <div class="expense-month-total"><?php echo $expense->getTotal(ossn_loggedin_user()->guid, '02', $year);?></div>
                                                 </div>                                         

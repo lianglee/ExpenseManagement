@@ -37,6 +37,7 @@ div.ui-datepicker-header a.ui-datepicker-prev,div.ui-datepicker-header a.ui-date
 						<div class="widget-contents">
                         	<table class="table table-striped">
                             	<?php 
+								$prices = false;
 								$em = new ExpenseManagement;
 								$list = $em->getList(ossn_loggedin_user()->guid, $params['month'], $params['year'], $query);
 								if($list){
@@ -51,7 +52,7 @@ div.ui-datepicker-header a.ui-datepicker-prev,div.ui-datepicker-header a.ui-date
                                             <?php		
 										}
 								}	
-								if(is_int($prices)){
+								if(is_array($prices)){
 									$sumtotal = array_sum($prices);
 								} else {
 									$sumtotal = 0;	
